@@ -1,0 +1,47 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+class Result {
+
+    /*
+     * Complete the 'staircase' function below.
+     *
+     * The function accepts INTEGER n as parameter.
+     */
+
+    public static void staircase(int n) {
+    // Write your code here
+     Scanner scanner = new Scanner(System.in);
+       for (int i = 1; i <= n; i = i + 1) {
+            int pt = n - i;
+            for (int c = 1; c <= pt; c = c + 1) {
+                System.out.print(" ");
+            }
+            for (int c = 1; c <= i; c = c + 1) {
+                System.out.print("#");
+            }
+            if (i < n) {
+                System.out.println();
+            }
+        }
+      
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
+
+        Result.staircase(n);
+
+        bufferedReader.close();
+    }
+}
